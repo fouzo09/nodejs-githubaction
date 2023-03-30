@@ -9,14 +9,14 @@ jobs:
         os: [macos-latest, windows-latest, ubuntu-18.04]
 
     steps:
-    # - uses: actions/checkout@v1
-    # - name: Use Nodejs ${{ matrix.node-version }}
-    # - uses: actions/setup-node@v1
-    # - with:
-    #     node-version: ${{ matrix.node-version }}
+    - uses: actions/checkout@v1
+    - name: Use Nodejs ${{ matrix.node-version }}
+    - uses: actions/setup-node@v1
+    - with:
+        node-version: ${{ matrix.node-version }}
     - name: npm install, run and test
       run: |
-        npm i
+        npm ci
         npm run build --if-present
         npm test
 

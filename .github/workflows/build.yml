@@ -2,4 +2,8 @@ name: Node CI
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu
+    runs-on: ${{ matrix.os }}
+  strategy:
+    matrix:
+      node_version: [14.x, 16.x, 18.x]
+      os: [ubuntu-18.04, windows-latest, macos-latest]

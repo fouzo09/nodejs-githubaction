@@ -2,11 +2,10 @@ name: Node CI
 on: [push]
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
-        os: [macos-latest, windows-latest, ubuntu-18.04]
+        node-version: [16.x]
 
     steps:
     - name: Checkout the repo

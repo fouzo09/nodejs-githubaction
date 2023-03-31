@@ -11,6 +11,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: "16.x"
-    - name: npm install, run and test
+    - name: Install packages
       run: |
         npm ci
+    - name: Run tests
+      run: |
+        npm test
